@@ -26,6 +26,18 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.es2021,
+        ...globals.jest,
+        cy: 'readonly',
+        cypress: 'readonly',
+        describe: 'readonly',
+        it: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        context: 'readonly',
+        before: 'readonly',
+        after: 'readonly',
+        vi: 'readonly',
       },
       parserOptions: {
         ecmaVersion: 'latest',

@@ -37,12 +37,12 @@ function App() {
         </header>
         <main className="container mt-4">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={authUser ? <HomePage /> : <LoginPage />} />
             <Route path="/threads/:id" element={<DetailPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/leaderboards" element={<LeaderboardPage />} />
-            <Route path="/add-thread" element={<AddThreadPage />} />
+            <Route path="/add-thread" element={authUser ? <AddThreadPage /> : <LoginPage />} />
           </Routes>
         </main>
       </div>
