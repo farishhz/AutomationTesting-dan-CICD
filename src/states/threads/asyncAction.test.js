@@ -1,4 +1,6 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import {
+  describe, it, expect, vi, beforeEach, afterEach,
+} from 'vitest';
 import { hideLoading, showLoading } from '@dimasmds/react-redux-loading-bar';
 import API from '../../utils/api';
 import { asyncAddThread, addThread } from './reducer';

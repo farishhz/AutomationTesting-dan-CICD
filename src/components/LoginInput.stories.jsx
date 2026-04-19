@@ -9,7 +9,9 @@ export default {
   },
 };
 
-const Template = (args) => <LoginInput {...args} />;
+function Template(args) {
+  return <LoginInput {...args} />;
+}
 
 export const Default = Template.bind({});
 Default.args = {};
