@@ -19,7 +19,7 @@ describe('LoginInput component', () => {
   it('should handle email typing correctly', async () => {
     // arrange
     render(<LoginInput login={() => {}} />);
-    const emailInput = await screen.getByPlaceholderText('name@example.com');
+    const emailInput = screen.getByPlaceholderText('name@example.com');
 
     // action
     await userEvent.type(emailInput, 'test@example.com');
@@ -31,7 +31,7 @@ describe('LoginInput component', () => {
   it('should handle password typing correctly', async () => {
     // arrange
     render(<LoginInput login={() => {}} />);
-    const passwordInput = await screen.getByPlaceholderText('••••••••');
+    const passwordInput = screen.getByPlaceholderText('••••••••');
 
     // action
     await userEvent.type(passwordInput, 'passwordtest');
@@ -44,9 +44,9 @@ describe('LoginInput component', () => {
     // arrange
     const mockLogin = vi.fn();
     render(<LoginInput login={mockLogin} />);
-    const emailInput = await screen.getByPlaceholderText('name@example.com');
-    const passwordInput = await screen.getByPlaceholderText('••••••••');
-    const loginButton = await screen.getByRole('button', { name: 'Sign In' });
+    const emailInput = screen.getByPlaceholderText('name@example.com');
+    const passwordInput = screen.getByPlaceholderText('••••••••');
+    const loginButton = screen.getByRole('button', { name: 'Sign In' });
 
     // action
     await userEvent.type(emailInput, 'test@example.com');

@@ -18,7 +18,7 @@ describe('CommentInput component', () => {
   it('should handle content typing correctly', async () => {
     // arrange
     render(<CommentInput addComment={() => {}} />);
-    const commentInput = await screen.getByPlaceholderText('What are your thoughts?');
+    const commentInput = screen.getByPlaceholderText('What are your thoughts?');
 
     // action
     await userEvent.type(commentInput, 'This is a test comment');
@@ -31,8 +31,8 @@ describe('CommentInput component', () => {
     // arrange
     const mockAddComment = vi.fn();
     render(<CommentInput addComment={mockAddComment} />);
-    const commentInput = await screen.getByPlaceholderText('What are your thoughts?');
-    const postButton = await screen.getByRole('button', { name: 'Post Comment' });
+    const commentInput = screen.getByPlaceholderText('What are your thoughts?');
+    const postButton = screen.getByRole('button', { name: 'Post Comment' });
 
     // action
     await userEvent.type(commentInput, 'This is a test comment');
